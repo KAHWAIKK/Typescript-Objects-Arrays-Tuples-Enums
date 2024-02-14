@@ -38,11 +38,16 @@ let test = []; //any type of data can go inside this aaray
 let bands = []; //only string data type can go inside this array
 bands.push("van der Waals");
 console.log(bands);
-//Tuple - they are used when you want to be more strict and define something that is locked in a specific position in a specific data type.
+/*
+Tuple - they are used when you want to be more
+strict and define something that
+is locked in a specific position in a specific data type. */
 let myTuple = ['Dave', 42, true];
 myTuple[1] = 42; //TS Accepts
 //myTuple[2] = 42 
-//TS Rejects this as it can only accept a boolean data type in position numbre 2
+//TS Rejects this as it 
+//can only accept a boolean 
+//data type in position number 2
 //OBJECT
 //Assigning an object type
 let myObj;
@@ -103,7 +108,10 @@ const greetGuitaristC = (guitaristC) => {
 };
 console.log(greetGuitaristC(amarulaC)); //console prints "Hello undefined" .This is because the name property was made an optional property.
 //ENUMS
-///* Unlike most Typescript features,Enums are not a type-level addition to javascript but something added to the language and runtime */
+/* Unlike most Typescript features,
+Enums are not a type-level addition
+to javascript but something
+added to the language and runtime */
 var Grade;
 (function (Grade) {
     Grade[Grade["U"] = 45] = "U";
@@ -113,5 +121,23 @@ var Grade;
     Grade[Grade["A"] = 49] = "A";
 })(Grade || (Grade = {}));
 console.log(Grade.U);
-// console returns 0, so this are enumerated and they start at position 0.
-//Therefore if you want to change those values you could assign the letter U say 41 and everthing will adapt hence D will be equal to 46.
+/* console returns 45, so this
+are enumerated and they start at position 0.
+Therefore if you want to change
+those values you could assign
+the letter U say 45 and everthing will
+adapt hence D will be equal
+to 46,C=47,B=48,A=49 */
+// Declare an enum
+(function (Grade) {
+    Grade[Grade["AA"] = 0] = "AA";
+    Grade[Grade["BB"] = 1] = "BB";
+    Grade[Grade["CC"] = 2] = "CC";
+})(Grade || (Grade = {}));
+// Use the enum values
+let gradeAchieved = Grade.A;
+// Access the enum values by name or index
+let gradeName = Grade[1]; // BB
+let gradeIndex = Grade.BB; // 1
+console.log(gradeName); // BB
+console.log(gradeIndex); //1

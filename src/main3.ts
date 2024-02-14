@@ -59,14 +59,18 @@ let bands: string[] = [] //only string data type can go inside this array
 bands.push("van der Waals")
 console.log(bands)
 
-
-//Tuple - they are used when you want to be more strict and define something that is locked in a specific position in a specific data type.
+/* 
+Tuple - they are used when you want to be more 
+strict and define something that 
+is locked in a specific position in a specific data type. */
 
 let myTuple : [ string, number, boolean] = ['Dave', 42 , true ]
 
 myTuple[1] = 42 //TS Accepts
 //myTuple[2] = 42 
-//TS Rejects this as it can only accept a boolean data type in position numbre 2
+//TS Rejects this as it 
+//can only accept a boolean 
+//data type in position number 2
 
 //OBJECT
 
@@ -96,7 +100,7 @@ exampleObj.prop2 = false//TS accepts this as it has been assigned a boolean type
 //TS indicates an error as it only accepts a string type
 
 
-//Object Type Annotation - we use something keyWord type
+//Object Type Annotation - we use the keyWord type
 
 type Guitarist = {
     name: string,
@@ -198,7 +202,10 @@ console.log(greetGuitaristC(amarulaC)) //console prints "Hello undefined" .This 
 
 //ENUMS
 
-///* Unlike most Typescript features,Enums are not a type-level addition to javascript but something added to the language and runtime */
+/* Unlike most Typescript features,
+Enums are not a type-level addition 
+to javascript but something 
+added to the language and runtime */
 
 enum Grade {
     U = 45,
@@ -209,8 +216,30 @@ enum Grade {
 }
 
 console.log(Grade.U)
-// console returns 0, so this are enumerated and they start at position 0.
-//Therefore if you want to change those values you could assign the letter U say 41 and everthing will adapt hence D will be equal to 46.
+ /* console returns 45, so this 
+ are enumerated and they start at position 0.
+Therefore if you want to change 
+those values you could assign 
+the letter U say 45 and everthing will
+ adapt hence D will be equal 
+ to 46,C=47,B=48,A=49 */
 
 
 
+// Declare an enum
+enum Grade {
+    AA,
+    BB,
+    CC,
+  }
+  
+  // Use the enum values
+  let gradeAchieved: Grade = Grade.A;
+  
+  // Access the enum values by name or index
+  let gradeName: string = Grade[1]; // BB
+  let gradeIndex: number = Grade.BB; // 1
+
+  console.log(gradeName)// BB
+  console.log(gradeIndex)//1
+  
